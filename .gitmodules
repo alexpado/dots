@@ -1,0 +1,6 @@
+[submodule "sources/omz/plugins/fzf-tab"]
+	path = sources/omz/plugins/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab.git
+[submodule "sources/omz/themes/headline"]
+	path = sources/omz/themes/headline
+	url = https://github.com/Moarram/headline.git
