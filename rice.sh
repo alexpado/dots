@@ -72,7 +72,7 @@ function link-all {
 function deps {
   yay -Sy hyprland hyprshot hyprpaper wofi waybar xdg-desktop-portal-gtk xdg-desktop-portal-hyprland \
     papirus-icon-theme-git chafa noto-fonts noto-fonts-cjk noto-fonts-emoji alacritty adw-gtk-theme \
-    qt5ct qt6ct mako playerctl inotify-tools montserrat-ttf fzf thefuck bc 
+    qt5ct qt6ct mako playerctl inotify-tools montserrat-ttf fzf thefuck bc
 }
 
 
