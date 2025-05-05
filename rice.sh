@@ -16,6 +16,13 @@ function omz-rice {
   echo "source ~/.ricing/zshrc" > "$HOME/.zshrc"
 }
 
+function ui-rice {
+  mkdir -p "$HOME/.local/share/icons"
+  
+  rm -rf "$HOME/.local/share/icons/future-cyan"
+  ln -s "$RICING_HOME/sources/cursors/future-cyan" "$HOME/.local/share/icons/future-cyan"
+}
+
 function rice-link {
   if [ -z "$1" ]; then
     echo "[!] Please provide a ricing name."
@@ -70,7 +77,7 @@ function link-all {
 }
 
 function deps {
-  yay -Sy hyprland hyprshot hyprpaper wofi waybar xdg-desktop-portal-gtk xdg-desktop-portal-hyprland \
+  yay -Sy hyprland hyprcursor hyprshot hyprpaper wofi waybar xdg-desktop-portal-gtk xdg-desktop-portal-hyprland \
     papirus-icon-theme-git chafa noto-fonts noto-fonts-cjk noto-fonts-emoji alacritty adw-gtk-theme \
     qt5ct qt6ct mako playerctl inotify-tools montserrat-ttf fzf thefuck bc
 }
@@ -85,6 +92,9 @@ case $1 in
     fi
     omz-rice
     ;;
+  ui)
+    ui-rice
+    ;;
   link)
     rice-link $2
     ;;
@@ -95,6 +105,7 @@ case $1 in
     echo "Ricing Utils"
     echo
     echo "  rice omz              Install oh-my-zsh spice"
+    edho "  rice ui               Install cursors and icons (that aren't on the AUR, sadge)"
     echo "  rice link <name>      Rice a .config folder"
     echo "  rice force-link       Enforce all config directories to be riced up."
     echo

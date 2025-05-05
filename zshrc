@@ -1,7 +1,9 @@
 RICING_HOME="$HOME/.ricing"
 
+export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nano"
+
 ZSH_CUSTOM="$RICING_HOME/rices/omz"
 ZSH_THEME="headline"
 
