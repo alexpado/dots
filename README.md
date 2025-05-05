@@ -1,15 +1,23 @@
 # Akio's ricing
 
-This repository exists mostly for me to keep my ricing somewhere and easily re-install it whenever I install an archlinux.
+Welcome to my ricing repository!
 
-I'll probably never support other distros, but I can help you if you try to install it yourself.
+Please note that this repository exists only for me to keep my ricing in a safe place. **It is not meant to be used publicly.** Yet, I'll leave this repository public as it can be a source of inspiration for some.
 
-It is highly recommended to clone this repository in `~/.ricing`. If you are not doing it, you are on your own!
+*If you are feeling adventurous you can try to use it still.*
 
-```
-git clone --recurse-submodules https://github.com/alexpado/dots.git ~/.ricing
-```
+### Wallpaper
 
-Then add `alias rice="~/.ricing/rice.sh"` into your `.bashrc` or `.zshrc` and source it. You can now use my ricing script.
+You can use the wallpaper freely, but it is **only for personal use**. If you use it in one of your rice, feel free to let me know :)
+
+For info, this is my color scheme, heavily inspired by Adapta Nokto.
 
 ![color scheme](img/color-scheme.png "Akio's Color Scheme")
+
+---
+
+Below are just memos for future me
+```
+git clone --recurse-submodules https://github.com/alexpado/dots.git ~/.ricing
+alias rice="~/.ricing/rice.sh"
+```
