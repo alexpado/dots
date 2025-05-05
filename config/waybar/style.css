@@ -63,3 +63,21 @@ tooltip label {
     background: #645700;
     color: white;
 }
+
+#networking:hover #network,
+#system:hover #battery, 
+#power:hover #clock {
+    border-radius: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.drawer .horizontal {
+    background: #243035;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.drawer .module {
+    background: transparent;
+}
