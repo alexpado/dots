@@ -2,8 +2,9 @@
 {
     "layer": "top",
     "position": "top",
-    "spacing": 10,
-    "margin": "10px 10px 0 10px",
+    "spacing": 8,
+    // Can't apply 8px on the bottom otherwise it would accumulate with hyprland gap (thus making it 16px) 
+    "margin": "8px 8px 0 8px",
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/window"
@@ -39,7 +40,6 @@
     },
     "battery": {
         "states": {
-            // "good": 95,
             "warning": 30,
             "critical": 15
         },
@@ -53,7 +53,6 @@
         "spacing": 10
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
         "family": "ipv4",
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
@@ -62,7 +61,6 @@
         "format-disconnected": "Disconnected ⚠"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}",
         "format-icons": {
             "default": [""]

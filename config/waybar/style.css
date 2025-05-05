@@ -21,7 +21,12 @@ tooltip label {
 }
 
 .module {
-    padding: 5px 20px;
+    padding: 8px 16px;
+}
+
+#window, #custom-playerctl {
+    padding: 8px 0px;
+    background: transparent;
 }
 
 #workspaces {
@@ -33,7 +38,7 @@ tooltip label {
 #workspaces button {
     border-radius: 8px;
     border: 0;
-    padding: 0 18px;
+    padding: 0 16px;
     background: transparent;
     color: rgb(165, 165, 165);
 }
