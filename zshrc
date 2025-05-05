@@ -11,7 +11,7 @@ zstyle ':omz:update' frequency 2
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="dd/mm/yyyy"
 
-plugins=(git)
+plugins=(git flatpak)
 
 alias reload="source ~/.zshrc"
 alias zshrc="nano ~/.zshrc"

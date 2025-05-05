@@ -10,6 +10,7 @@ function omz-rice {
   mkdir -p "$RICING_HOME/rices/omz/plugins"
 
   ln -s "$RICING_HOME/sources/omz/plugins/fzf-tab" "$RICING_HOME/rices/omz/plugins/fzf-tab"
+  ln -s "$RICING_HOME/sources/omz/plugins/flatpak" "$RICING_HOME/rices/omz/plugins/flatpak"
   ln -s "$RICING_HOME/sources/omz/themes/headline/headline.zsh-theme" "$RICING_HOME/rices/omz/themes/headline.zsh-theme"
 
   echo "source ~/.ricing/zshrc" > "$HOME/.zshrc"
@@ -71,7 +72,7 @@ function link-all {
 function deps {
   yay -Sy hyprland hyprshot hyprpaper wofi waybar xdg-desktop-portal-gtk xdg-desktop-portal-hyprland \
     papirus-icon-theme-git chafa noto-fonts noto-fonts-cjk noto-fonts-emoji alacritty adw-gtk-theme \
-    qt5ct qt6ct mako
+    qt5ct qt6ct mako playerctl inotify-tools montserrat-ttf fzf thefuck bc 
 }
 
 

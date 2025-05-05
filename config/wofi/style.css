@@ -1,0 +1,38 @@
+window {
+    background-color: #1C2427;
+    color: #00BCD4;
+    font-family: "Montserrat";
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+#outer-box {
+    border: 0;
+}
+
+#entry {
+    border:0;
+    padding: 5px;
+    margin: 2px 0;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+#entry:selected, #entry:focus {
+    background-color: #29353B;
+    color: #00BCD4;
+    outline: none
+}
+
+#input {
+    margin: 5px;
+    padding: 6px;
+    background-color: #243035;
+    border: none;
+    border-radius: 6px;
+    color: #00BCD4;
+}
+
+#img {
+    padding: 0 10px;
+}

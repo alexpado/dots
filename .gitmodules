@@ -4,3 +4,6 @@
 [submodule "sources/omz/themes/headline"]
 	path = sources/omz/themes/headline
 	url = https://github.com/Moarram/headline.git
+[submodule "sources/omz/plugins/flatpak"]
+	path = sources/omz/plugins/flatpak
+	url = https://github.com/bilelmoussaoui/flatpak-zsh-completion.git
