@@ -1,0 +1,8 @@
+{
+  "debug": false,
+  "monitors": {
+    "1": "config.single.jsonc",
+    "2": "config.dual.jsonc",
+    "*": "config.single.jsonc"
+  }
+}
