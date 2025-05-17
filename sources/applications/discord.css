@@ -1,0 +1,142 @@
+/**
+ * @name Akio's Blue Midnight
+ * @description Just a color scheme, with minimal visual changes.
+ * @author Akio Nakao
+ * @version 1.0.0
+ * @website https://github.com/alexpado/dots
+ * @source https://github.com/alexpado/dots/blob/master/sources/applications/discord.css
+ * @authorId 149279150648066048
+ * @authorLink https://github.com/alexpado
+*/
+
+:root {
+  --x-scheme-background-lowest:       oklch(0.21 0.01080 229);
+  --x-scheme-background-lower:        oklch(0.23 0.01145 229);
+  --x-scheme-background:              oklch(0.25 0.01281 229);
+  --x-scheme-background-lighter:      oklch(0.27 0.01469 229);
+  --x-scheme-background-lightest:     oklch(0.29 0.01701 229);
+
+  --x-scheme-primary:                 oklch(0.75 0.15000 229);
+  --x-scheme-highlight:               oklch(0.37 0.03482 229);
+  --x-scheme-black:                   oklch(0.20 0.00000 0);
+  --x-scheme-red:                     oklch(0.55 0.20000 30);
+  --x-scheme-green:                   oklch(0.74 0.20000 128);
+  --x-scheme-yellow:                  oklch(0.75 0.20000 86);
+  --x-scheme-blue:                    oklch(0.60 0.20000 243);
+  --x-scheme-magenta:                 oklch(0.47 0.20000 301);
+  --x-scheme-cyan:                    oklch(0.75 0.15000 229);
+  --x-scheme-white:                   oklch(0.89 0.00000 0);
+
+  --x-scheme-bright-primary:          oklch(0.90 0.10000 229);
+  --x-scheme-bright-highlight:        oklch(0.52 0.07036 229);
+  --x-scheme-bright-black:            oklch(0.30 0.00000 0);
+  --x-scheme-bright-red:              oklch(0.70 0.15000 30);
+  --x-scheme-bright-green:            oklch(0.89 0.15000 128);
+  --x-scheme-bright-yellow:           oklch(0.90 0.15000 86);
+  --x-scheme-bright-blue:             oklch(0.75 0.15000 243);
+  --x-scheme-bright-magenta:          oklch(0.62 0.15000 301);
+  --x-scheme-bright-cyan:             oklch(0.90 0.10000 229);
+  --x-scheme-bright-white:            oklch(0.99 0.00000 0);
+
+  --x-scheme-muted-primary:           oklch(0.60 0.15000 229);
+  --x-scheme-muted-highlight:         oklch(0.22 0.01189 229);
+  --x-scheme-muted-black:             oklch(0.10 0.00000 0);
+  --x-scheme-muted-red:               oklch(0.40 0.20000 30);
+  --x-scheme-muted-green:             oklch(0.59 0.20000 128);
+  --x-scheme-muted-yellow:            oklch(0.60 0.20000 86);
+  --x-scheme-muted-blue:              oklch(0.45 0.20000 243);
+  --x-scheme-muted-magenta:           oklch(0.32 0.20000 301);
+  --x-scheme-muted-cyan:              oklch(0.60 0.15000 229);
+  --x-scheme-muted-white:             oklch(0.79 0.00000 0);
+
+  --x-scheme-primary-hover:           oklch(0.80 0.15000 229);
+  --x-scheme-highlight-hover:         oklch(0.42 0.04525 229);
+  --x-scheme-black-hover:             oklch(0.22 0.00000 0);
+  --x-scheme-red-hover:               oklch(0.60 0.20000 30);
+  --x-scheme-green-hover:             oklch(0.79 0.20000 128);
+  --x-scheme-yellow-hover:            oklch(0.80 0.20000 86);
+  --x-scheme-blue-hover:              oklch(0.65 0.20000 243);
+  --x-scheme-magenta-hover:           oklch(0.52 0.20000 301);
+  --x-scheme-cyan-hover:              oklch(0.80 0.15000 229);
+  --x-scheme-white-hover:             oklch(0.91 0.00000 0);
+
+  --x-scheme-bright-primary-hover:    oklch(0.85 0.10000 229);
+  --x-scheme-bright-highlight-hover:  oklch(0.47 0.05709 229);
+  --x-scheme-bright-black-hover:      oklch(0.28 0.00000 0);
+  --x-scheme-bright-red-hover:        oklch(0.65 0.15000 30);
+  --x-scheme-bright-green-hover:      oklch(0.84 0.15000 128);
+  --x-scheme-bright-yellow-hover:     oklch(0.85 0.15000 86);
+  --x-scheme-bright-blue-hover:       oklch(0.70 0.15000 243);
+  --x-scheme-bright-magenta-hover:    oklch(0.57 0.15000 301);
+  --x-scheme-bright-cyan-hover:       oklch(0.85 0.10000 229);
+  --x-scheme-bright-white-hover:      oklch(0.97 0.00000 0);
+
+  --x-scheme-muted-primary-hover:     oklch(0.65 0.15000 229);
+  --x-scheme-muted-highlight-hover:   oklch(0.27 0.01816 229);
+  --x-scheme-muted-black-hover:       oklch(0.12 0.00000 0);
+  --x-scheme-muted-red-hover:         oklch(0.45 0.20000 30);
+  --x-scheme-muted-green-hover:       oklch(0.64 0.20000 128);
+  --x-scheme-muted-yellow-hover:      oklch(0.65 0.20000 86);
+  --x-scheme-muted-blue-hover:        oklch(0.50 0.20000 243);
+  --x-scheme-muted-magenta-hover:     oklch(0.37 0.20000 301);
+  --x-scheme-muted-cyan-hover:        oklch(0.65 0.15000 229);
+  --x-scheme-muted-white-hover:       oklch(0.81 0.00000 0);
+}
+
+.visual-refresh .theme-darker,
+.visual-refresh.theme-darker {
+  --brand-500:                var(--x-scheme-primary-color);
+  --brand-360:                var(--x-scheme-primary-color);
+  --info-warning-foreground:  var(--x-scheme-primary-color);
+
+  --button-filled-brand-background-hover: var(--x-scheme-primary-color-hover);
+
+  --background-modifier-selected: var(--x-scheme-highlight);
+  --background-mentioned:         var(--x-scheme-highlight);
+  --mention-background:           var(--x-scheme-highlight);
+
+  --background-mentioned-hover: var(--x-scheme-highlight-hover);
+
+  --background-base-lowest:   var(--x-scheme-background-lowest);
+  --bg-base-tertiary:         var(--x-scheme-background-lowest);
+  --background-surface-high:  var(--x-scheme-background-lowest);
+  --background-code:          var(--x-scheme-background-lowest);
+  --background-secondary-alt: var(--x-scheme-background-lowest);
+  --primary-800:              var(--x-scheme-background-lowest);
+  --input-background:         var(--x-scheme-background-lowest);
+
+  --card-primary-bg:            var(--x-scheme-background-lower);
+  --custom-channel-members-bg:  var(--x-scheme-background-lower);
+
+  --background-base-lower:      var(--x-scheme-background);
+  --background-floating:        var(--x-scheme-background);
+  --modal-background:           var(--x-scheme-background);
+  --modal-footer-background:    var(--x-scheme-background);
+  --background-base-low:        var(--x-scheme-background);
+  --background-surface-higher:  var(--x-scheme-background);
+  --background-modifier-active: var(--x-scheme-background);
+
+  --button-secondary-background:    var(--x-scheme-background-lighter);
+  --button-transparent-background:  var(--x-scheme-background-lighter);
+  --background-secondary:           var(--x-scheme-background-lighter);
+  --input-border:                   var(--x-scheme-background-lighter);
+  --background-message-hover:       var(--x-scheme-background-lighter);
+
+  --chat-background-default:              var(--x-scheme-background-lightest);
+  --background-modifier-hover:            var(--x-scheme-background-lightest);
+  --background-surface-highest:           var(--x-scheme-background-lightest);
+  --bg-mod-subtle:                        var(--x-scheme-background-lightest);
+  --button-secondary-background-hover:    var(--x-scheme-background-lightest);
+  --button-transparent-background-hover:  var(--x-scheme-background-lightest);
+  --interactive-muted:                    var(--x-scheme-background-lightest);
+  --bg-surface-raised:                    var(--x-scheme-background-lightest);
+  --border-subtle:                        var(--x-scheme-background-lightest);
+}
+
+.container__87bf1 {
+  background-color: var(--x-scheme-background-lightest)!important;
+}
+
+.container__87bf1.checked__87bf1 {
+  background-color: var(--x-scheme-primary-color)!important;
+}
