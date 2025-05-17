@@ -1,34 +1,34 @@
 [colors.primary]
-background = '#13191C'
-foreground = '#EBEBEB'
+background = '#13191c'
+foreground = '#dbdbdb'
 
 [colors.cursor]
-text = '#EBEBEB'
-cursor = '#00BCD4'
+text = '#dbdbdb'
+cursor = '#00bef9'
 
 [colors.normal]
-black   = '#0d0d0d'
-red     = '#FF301B'
-green   = '#A0E521'
-yellow  = '#FFC620'
-blue    = '#1BA6FA'
-magenta = '#8763B8'
-cyan    = '#21DEEF'
-white   = '#EBEBEB'
+black   = '#161616'
+red     = '#cc2a1b'
+green   = '#86c100'
+yellow  = '#dea300'
+blue    = '#0087de'
+magenta = '#702eb6'
+cyan    = '#00bef9'
+white   = '#dbdbdb'
 
 [colors.bright]
-black   = '#6D7070'
-red     = '#FF4352'
-green   = '#B8E466'
-yellow  = '#FFD750'
-blue    = '#1BA6FA'
-magenta = '#A578EA'
-cyan    = '#73FBF1'
-white   = '#FEFEF8'
+black   = '#2e2e2e'
+red     = '#ed7665'
+green   = '#beed7d'
+yellow  = '#ffd65a'
+blue    = '#47b7ff'
+magenta = '#966dd1'
+cyan    = '#9feaff'
+white   = '#fcfcfc'
 
 [window.padding]
-x = 10
-y = 10
+x = 8
+y = 8
 
 [cursor.style]
 shape = 'Beam'

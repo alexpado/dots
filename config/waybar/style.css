@@ -1,83 +1,138 @@
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "Monstserrat", sans-serif;
-    font-size: 16px;
-    min-height: 0;
+  border: none;
+  border-radius: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  min-height: 0;
 }
 
 window#waybar {
-    background: transparent;
-    color: white;
+  background: transparent;
+  color: #dbdbdb;
 }
 
 tooltip {
-  background: #243035;
-  border-radius: 8px;
+  background: transparent;
 }
 
 tooltip label {
-  color: white;
+  background: #171e21;
+  border: 2px solid #2c434f;
+  border-radius: 8px;
+  color: #dbdbdb;
+  padding: 8px 16px;
 }
 
 .module {
-    padding: 8px 16px;
+  padding: 8px 16px;
 }
 
-#window, #custom-playerctl {
-    padding: 8px 0px;
-    background: transparent;
+#window,
+#custom-playerctl {
+  padding: 8px 0px;
+  background: transparent;
+  border: none;
+  color: #fcfcfc
 }
 
 #workspaces {
-    background: #1C2427;
-    border-radius: 8px;
-    padding: 0;
+  background: #171e21;
+  border-radius: 8px;
+  border: 2px solid #2c434f;
+  padding: 2px;
 }
 
 #workspaces button {
-    border-radius: 8px;
-    border: 0;
-    padding: 0 16px;
-    background: transparent;
-    color: rgb(165, 165, 165);
+  border-radius: 4px;
+  border: 0;
+  padding: 2px 16px 0px 16px;
+  background: transparent;
+  color: #bababa;
+}
+
+#workspaces button:not(:first-child) {
+  margin-left: 2px;
+}
+
+#workspaces button:hover {
+  background: #232d32;
 }
 
 #workspaces button.active {
-    background: #243035;
-    color: #00BCD4;
-}
-
-.modules-right .module {
-    background: #1C2427;
-    color: white;
-    border-radius: 8px;
+  background: #2c434f;
+  color: #fcfcfc;
 }
 
 #battery.critical:not(.charging) {
-    background: #640000;
-    color: white;
+  color: #920000;
 }
 
 #battery.warning:not(.charging) {
-    background: #645700;
-    color: white;
+  color: #a57800;
 }
 
-#networking:hover #network,
-#system:hover #battery, 
-#power:hover #clock {
-    border-radius: 0;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+#networking:hover,
+#system:hover,
+#power:hover {
+  color: #fcfcfc
+}
+
+#networking .drawer .module {
+  color: #fcfcfc;
+}
+
+#networking .drawer .module.disconnected {
+  color: #bababa;
+}
+
+#networking .drawer .module.no-controller {
+  color: #ed7665;
+}
+
+#clock {
+  font-family: monospace;
+}
+
+#power,
+#networking,
+#system,
+#tray,
+#pulseaudio {
+  background: #171e21;
+  color: #dbdbdb;
+  border: 2px solid #2c434f;
+  border-radius: 8px;
+}
+
+#power,
+#networking,
+#system {
+  padding: 2px;
+}
+
+#power:hover #clock,
+#networking:hover #network.global,
+#system:hover #battery {
+  background: #2c434f;
+  border-radius: 4px;
 }
 
 .drawer .horizontal {
-    background: #243035;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+  background: #171e21;
 }
 
-.drawer .module {
-    background: transparent;
+.drawer .horizontal .module {
+  margin-right: 2px;
+}
+
+.drawer .horizontal .module {
+  background: #1f282c;
+  border-radius: 4px;
+  border: none;
+  background: transparent;
+}
+
+.drawer .text-button:hover, #network.vpn:hover, #pulseaudio:hover {
+  color: #fcfcfc;
+  background: #232d32;
 }

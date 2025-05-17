@@ -1,0 +1,168 @@
+/*
+A K I O   C O L O R   S C H E M E
+Blue Midnight
+*/
+
+.akio-blue-midnight {
+
+  /* Rule (with few exception)
+  
+  1. Background color chroma follow a formula depending on the luminance: C = 0.15 * (L / 0.75) ^ (LOG(0.0108 / 0.15) / LOG(0.21 / 0.75))
+
+  2. Defining color variants follow those set of constraints:
+    a. MAIN to another variants (BRIGHT/MUTED) is a L step of 0.15
+    b. White and Black color steps only by 0.1
+    c. Adjust chroma if necessary (to avoid gammut clamping)
+
+  3. Defining hover state colors follow those set of constraints:
+    a. If color is BRIGHT, L step -0.05
+    b. If color is MUTED, L step +0.05
+    c. If color is MAIN, adapt depending on the base L value (but prefer +0.05 whenever possible)
+    d. Same for black and white, but with 0.02 step
+
+  4. "highlight" color is based on the background chroma formula, hence the changes across variants.
+  */
+
+  --x-scheme-background-lowest:       oklch(0.21 0.01080 229);
+  --x-scheme-background-lower:        oklch(0.23 0.01145 229);
+  --x-scheme-background:              oklch(0.25 0.01281 229);
+  --x-scheme-background-lighter:      oklch(0.27 0.01469 229);
+  --x-scheme-background-lightest:     oklch(0.29 0.01701 229);
+
+  --x-scheme-primary:                 oklch(0.75 0.15000 229);
+  --x-scheme-highlight:               oklch(0.37 0.03482 229);
+  --x-scheme-black:                   oklch(0.20 0.00000 0);
+  --x-scheme-red:                     oklch(0.55 0.20000 30);
+  --x-scheme-green:                   oklch(0.74 0.20000 128);
+  --x-scheme-yellow:                  oklch(0.75 0.20000 86);
+  --x-scheme-blue:                    oklch(0.60 0.20000 243);
+  --x-scheme-magenta:                 oklch(0.47 0.20000 301);
+  --x-scheme-cyan:                    oklch(0.75 0.15000 229);
+  --x-scheme-white:                   oklch(0.89 0.00000 0);
+
+  --x-scheme-bright-primary:          oklch(0.90 0.10000 229);
+  --x-scheme-bright-highlight:        oklch(0.52 0.07036 229);
+  --x-scheme-bright-black:            oklch(0.30 0.00000 0);
+  --x-scheme-bright-red:              oklch(0.70 0.15000 30);
+  --x-scheme-bright-green:            oklch(0.89 0.15000 128);
+  --x-scheme-bright-yellow:           oklch(0.90 0.15000 86);
+  --x-scheme-bright-blue:             oklch(0.75 0.15000 243);
+  --x-scheme-bright-magenta:          oklch(0.62 0.15000 301);
+  --x-scheme-bright-cyan:             oklch(0.90 0.10000 229);
+  --x-scheme-bright-white:            oklch(0.99 0.00000 0);
+
+  --x-scheme-muted-primary:           oklch(0.60 0.15000 229);
+  --x-scheme-muted-highlight:         oklch(0.22 0.01189 229);
+  --x-scheme-muted-black:             oklch(0.10 0.00000 0);
+  --x-scheme-muted-red:               oklch(0.40 0.20000 30);
+  --x-scheme-muted-green:             oklch(0.59 0.20000 128);
+  --x-scheme-muted-yellow:            oklch(0.60 0.20000 86);
+  --x-scheme-muted-blue:              oklch(0.45 0.20000 243);
+  --x-scheme-muted-magenta:           oklch(0.32 0.20000 301);
+  --x-scheme-muted-cyan:              oklch(0.60 0.15000 229);
+  --x-scheme-muted-white:             oklch(0.79 0.00000 0);
+
+  --x-scheme-primary-hover:           oklch(0.80 0.15000 229);
+  --x-scheme-highlight-hover:         oklch(0.42 0.04525 229);
+  --x-scheme-black-hover:             oklch(0.22 0.00000 0);
+  --x-scheme-red-hover:               oklch(0.60 0.20000 30);
+  --x-scheme-green-hover:             oklch(0.79 0.20000 128);
+  --x-scheme-yellow-hover:            oklch(0.80 0.20000 86);
+  --x-scheme-blue-hover:              oklch(0.65 0.20000 243);
+  --x-scheme-magenta-hover:           oklch(0.52 0.20000 301);
+  --x-scheme-cyan-hover:              oklch(0.80 0.15000 229);
+  --x-scheme-white-hover:             oklch(0.91 0.00000 0);
+
+  --x-scheme-bright-primary-hover:    oklch(0.85 0.10000 229);
+  --x-scheme-bright-highlight-hover:  oklch(0.47 0.05709 229);
+  --x-scheme-bright-black-hover:      oklch(0.28 0.00000 0);
+  --x-scheme-bright-red-hover:        oklch(0.65 0.15000 30);
+  --x-scheme-bright-green-hover:      oklch(0.84 0.15000 128);
+  --x-scheme-bright-yellow-hover:     oklch(0.85 0.15000 86);
+  --x-scheme-bright-blue-hover:       oklch(0.70 0.15000 243);
+  --x-scheme-bright-magenta-hover:    oklch(0.57 0.15000 301);
+  --x-scheme-bright-cyan-hover:       oklch(0.85 0.10000 229);
+  --x-scheme-bright-white-hover:      oklch(0.97 0.00000 0);
+
+  --x-scheme-muted-primary-hover:     oklch(0.65 0.15000 229);
+  --x-scheme-muted-highlight-hover:   oklch(0.27 0.01816 229);
+  --x-scheme-muted-black-hover:       oklch(0.12 0.00000 0);
+  --x-scheme-muted-red-hover:         oklch(0.45 0.20000 30);
+  --x-scheme-muted-green-hover:       oklch(0.64 0.20000 128);
+  --x-scheme-muted-yellow-hover:      oklch(0.65 0.20000 86);
+  --x-scheme-muted-blue-hover:        oklch(0.50 0.20000 243);
+  --x-scheme-muted-magenta-hover:     oklch(0.37 0.20000 301);
+  --x-scheme-muted-cyan-hover:        oklch(0.65 0.15000 229);
+  --x-scheme-muted-white-hover:       oklch(0.81 0.00000 0);
+}
+
+.akio-blue-midnight-hex {
+  --x-scheme-background-lowest:       #13191c;
+  --x-scheme-background-lower:        #171e21;
+  --x-scheme-background:              #1b2327;
+  --x-scheme-background-lighter:      #1f282c;
+  --x-scheme-background-lightest:     #232d32;
+
+  --x-scheme-highlight:               #2c434f;
+  --x-scheme-highlight-hover:         #325261;
+
+  --x-scheme-primary:                 #00bef9;
+  --x-scheme-black:                   #161616;
+  --x-scheme-red:                     #cc2a1b;
+  --x-scheme-green:                   #86c100;
+  --x-scheme-yellow:                  #dea300;
+  --x-scheme-blue:                    #0087de;
+  --x-scheme-magenta:                 #702eb6;
+  --x-scheme-cyan:                    #00bef9;
+  --x-scheme-white:                   #dbdbdb;
+
+  --x-scheme-bright-primary:          #9feaff;
+  --x-scheme-bright-black:            #2e2e2e;
+  --x-scheme-bright-red:              #ed7665;
+  --x-scheme-bright-green:            #beed7d;
+  --x-scheme-bright-yellow:           #ffd65a;
+  --x-scheme-bright-blue:             #47b7ff;
+  --x-scheme-bright-magenta:          #966dd1;
+  --x-scheme-bright-cyan:             #9feaff;
+  --x-scheme-bright-white:            #fcfcfc;
+
+  --x-scheme-muted-primary:           #008ec3;
+  --x-scheme-muted-black:             #030303;
+  --x-scheme-muted-red:               #920000;
+  --x-scheme-muted-green:             #5e8f00;
+  --x-scheme-muted-yellow:            #a57800;
+  --x-scheme-muted-blue:              #005a9b;
+  --x-scheme-muted-magenta:           #470082;
+  --x-scheme-muted-cyan:              #008ec3;
+  --x-scheme-muted-white:             #bababa;
+
+  --x-scheme-primary-hover:           #29cfff;
+  --x-scheme-black-hover:             #1b1b1b;
+  --x-scheme-red-hover:               #de3e2d;
+  --x-scheme-green-hover:             #95d11c;
+  --x-scheme-yellow-hover:            #f1b200;
+  --x-scheme-blue-hover:              #0097f6;
+  --x-scheme-magenta-hover:           #7f40c7;
+  --x-scheme-cyan-hover:              #29cfff;
+  --x-scheme-white-hover:             #e1e1e1;
+
+  --x-scheme-bright-primary-hover:    #84dbff;
+  --x-scheme-bright-black-hover:      #292929;
+  --x-scheme-bright-red-hover:        #db6656;
+  --x-scheme-bright-green-hover:      #aedd6d;
+  --x-scheme-bright-yellow-hover:     #f9c647;
+  --x-scheme-bright-blue-hover:       #33a7f3;
+  --x-scheme-bright-magenta-hover:    #875ec1;
+  --x-scheme-bright-cyan-hover:       #84dbff;
+  --x-scheme-bright-white-hover:      #f5f5f5;
+
+  --x-scheme-muted-primary-hover:     #009ed7;
+  --x-scheme-muted-black-hover:       #060606;
+  --x-scheme-muted-red-hover:         #a90000;
+  --x-scheme-muted-green-hover:       #6aa000;
+  --x-scheme-muted-yellow-hover:      #b88600;
+  --x-scheme-muted-blue-hover:        #0069b1;
+  --x-scheme-muted-magenta-hover:     #550095;
+  --x-scheme-muted-cyan-hover:        #009ed7;
+  --x-scheme-muted-white-hover:       #c1c1c1;
+}

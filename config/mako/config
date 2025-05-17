@@ -11,16 +11,16 @@ padding=16
 width=600
 height=90
 border-radius=8
-border-size=1
-background-color=#1C2427EE
-border-color=#00BCD400
+border-size=2
+background-color=#13191c
+border-color=#2c434f
 
 [urgency=low]
-border-color=#00BCD400
+border-color=#00bef9
 
 [urgency=normal]
-border-color=#00BCD4
+border-color=#2c434f
 
 [urgency=high]
-border-color=#bf616a00
+border-color=#cc2a1b
 default-timeout=0
