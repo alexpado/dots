@@ -2,7 +2,7 @@
 
 Welcome to my ricing repository!
 
-Please note that this repository exists only for me to keep my ricing in a safe place. **It is not meant to be used publicly.** Yet, I'll leave this repository public as it can be a source of inspiration for some.
+Please note that this repository exists only for me to keep my ricing in a safe place. **It is not meant to be used publicly (yet).** Yet, I'll leave this repository public as it can be a source of inspiration for some.
 
 *If you are feeling adventurous you can try to use it still.*
 
