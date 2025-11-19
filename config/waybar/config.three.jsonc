@@ -1,6 +1,8 @@
 // -*- mode: jsonc -*-
 [
   {
+    // Depending on the screen I need
+    //"output": "DP-3",
     "output": "DP-1",
     "layer": "top",
     "position": "top",
@@ -199,7 +201,7 @@
     }
   },
   {
-    "output": "eDP-1",
+    "output": "HDMI-A-1",
     "layer": "top",
     "position": "top",
     "spacing": 8,
@@ -248,6 +250,43 @@
     "pulseaudio": {
       "format": "{volume}% \udb80\udece",
       "on-click": "pwvucontrol"
+    }
+  },
+  {
+    "output": "eDP-1",
+    "layer": "top",
+    "position": "top",
+    "spacing": 8,
+    "margin": "8px 8px 0 8px", // Can't apply 8px on the bottom otherwise it would accumulate with hyprland gap (thus making it 16px) 
+    // ---------------------
+    // Modules delcaration
+    // ---------------------
+    "modules-left": [
+      "hyprland/workspaces",
+      "hyprland/window"
+    ],
+    
+    // ---------------------
+    // Modules configuration
+    // ---------------------
+    "hyprland/workspaces": {
+      "all-outputs": false,
+      "format": "{icon}",
+      "format-icons": {
+        "1": "\udb82\ude07",
+        "2": "\udb84\udeca",
+        "3": "\udb81\udf5a",
+        "4": "\udb81\udfb7",
+        "5": "\udb80\udd74",
+        "6": "\udb80\ude39",
+        "8": "\udb83\udec3",
+        "9": "\udb80\udd18",
+        "10": "\udb85\udd74",
+        "default": "\udb80\udf79"
+      }
+    },
+    "hyprland/window": {
+      "separate-outputs": true
     }
   }
 ]

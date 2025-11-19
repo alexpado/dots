@@ -1,0 +1,21 @@
+{
+  "creates": [
+    "~/.ricing/rices/omz",
+    "~/.local/share/icons",
+    "~/.config/vesktop/themes"
+  ],
+  "links": {
+    "~/.ricing/config/alacritty": "~/.config/alacritty",
+    "~/.ricing/config/gtk-3.0": "~/.config/gtk-3.0",
+    "~/.ricing/config/htop": "~/.config/htop",
+    "~/.ricing/config/hypr": "~/.config/hypr",
+    "~/.ricing/config/mako": "~/.config/mako",
+    "~/.ricing/config/waybar": "~/.config/waybar",
+    "~/.ricing/config/wofi": "~/.config/wofi",
+    "~/.ricing/sources/omz/plugins/fzf-tab": "~/.ricing/rices/omz/plugins/fzf-tab",
+    "~/.ricing/sources/omz/plugins/flatpak": "~/.ricing/rices/omz/plugins/flatpak",
+    "~/.ricing/sources/omz/themes/headline/headline.zsh-theme": "~./ricing/rices/omz/themes/headline.zsh-theme",
+    "~/.ricing/sources/cursors/future-cyan": "~/.local/share/icons/future-cyan",
+    "~/.ricing/sources/applications/discord.css": "~/.config/vesktop/themes/akio-dots.css"
+  }
+}

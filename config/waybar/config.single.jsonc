@@ -13,7 +13,7 @@
   ],
   "modules-center": [],
   "modules-right": [
-    "custom/playerctl",
+    // "custom/playerctl",
     "pulseaudio",
     "tray",
     "group/networking",
@@ -41,7 +41,7 @@
   },
   // ---------------------
   "custom/playerctl": {
-    "exec": "playerctl metadata --format '{{ artist }} - {{ title }}'",
+    "exec": "metadata=$(playerctl metadata --format '{{ artist }} - {{ title }}'); [ ${#metadata} -le 50 ] && echo \"$metadata\" || playerctl metadata --format '{{ title }}'",
     "exec-if": "playerctl status | grep -q Playing",
     "interval": 1
   },
