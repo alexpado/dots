@@ -1,0 +1,292 @@
+// -*- mode: jsonc -*-
+[
+  {
+    // Depending on the screen I need
+    //"output": "DP-3",
+    "output": "DP-1",
+    "layer": "top",
+    "position": "top",
+    "spacing": 8,
+    "margin": "8px 8px 0 8px", // Can't apply 8px on the bottom otherwise it would accumulate with hyprland gap (thus making it 16px) 
+    // ---------------------
+    // Modules delcaration
+    // ---------------------
+    "modules-left": [
+      "hyprland/workspaces",
+      "hyprland/window"
+    ],
+    "modules-center": [],
+    "modules-right": [
+      "tray",
+      "group/networking",
+      "group/system",
+      "group/power"
+    ],
+    // ---------------------
+    // Modules configuration
+    // ---------------------
+    "hyprland/workspaces": {
+      "all-outputs": false,
+      "format": "{icon}",
+      "format-icons": {
+        "1": "\udb82\ude07",
+        "2": "\udb84\udeca",
+        "3": "\udb81\udf5a",
+        "4": "\udb81\udfb7",
+        "5": "\udb80\udd74",
+        "6": "\udb80\ude39",
+        "8": "\udb83\udec3",
+        "9": "\udb80\udd18",
+        "10": "\udb85\udd74",
+        "default": "\udb80\udf79"
+      }
+    },
+    "hyprland/window": {
+      "separate-outputs": true
+    },
+    // ---------------------
+    "tray": {
+      "spacing": 16
+    },
+    // ---------------------
+    "group/networking": {
+      "orientation": "horizontal",
+      "modules": [
+        "network#global",
+        "bluetooth",
+        "network#vpn",
+        "network#eth",
+        "network#wifi"
+      ],
+      "drawer": {
+        "transition-duration": 500,
+        "transition-left-to-right": false
+      }
+    },
+    "network#global": {
+      "tooltip": false,
+      "format": "\udb81\udd9f",
+      "format-disconnected": "\udb82\ude8e"
+    },
+    "network#wifi": {
+      "interface": "wlan0",
+      "family": "ipv4",
+      "format": "{icon}",
+      "tooltip-format": "{essid}\n{ipaddr}",
+      "format-disconnected": "\udb82\udd2e",
+      "tooltip-format-disconnected": "wlan0 down",
+      "format-icons": [
+        "\udb82\udd2f",
+        "\udb82\udd1f",
+        "\udb82\udd22",
+        "\udb82\udd25",
+        "\udb82\udd28"
+      ]
+    },
+    "network#eth": {
+      "interface": "enp1s0",
+      "family": "ipv4",
+      "format": "\udb80\ude00",
+      "tooltip-format": "enp1s0\n{ipaddr}",
+      "tooltip-format-disconnected": "enp1s0\nUnavailable"
+    },
+    "network#vpn": {
+      "interface": "akio-home",
+      "family": "ipv4",
+      "interval": 1,
+      "format": "\udb81\udd82",
+      "tooltip-format": "Click to disconnect\nIP: {ipaddr}",
+      "tooltip-format-disconnected": "Click to connect\nVPN Offline",
+      "on-click": "~/.config/waybar/modules/wireguard.sh"
+    },
+    "bluetooth": {
+      "format-no-controller": "", // Hide when bluetooth not available
+      "format-on": "\udb80\udcaf",
+      "format-off": "\udb80\udcb2"
+    },
+    // ---------------------
+    "group/system": {
+      "orientation": "horizontal",
+      "modules": [
+        "battery",
+        "memory",
+        "disk",
+        "cpu",
+        "custom/turbo"
+      ],
+      "drawer": {
+        "transition-duration": 500,
+        "transition-left-to-right": false
+      }
+    },
+    "battery": {
+      "interval": 2,
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon}",
+      "tooltip-format": "{capacity}%",
+      "format-full": "{icon}",
+      "format-charging": "{icon} \udb81\udea5",
+      "format-plugged": "{icon} \udb81\udea5",
+      "format-icons": [
+        "\udb80\udc7a",
+        "\udb80\udc7b",
+        "\udb80\udc7c",
+        "\udb80\udc7d",
+        "\udb80\udc7e",
+        "\udb80\udc7f",
+        "\udb80\udc80",
+        "\udb80\udc81",
+        "\udb80\udc82",
+        "\udb80\udc79"
+      ]
+    },
+    "cpu": {
+      "interval": 2,
+      "format": "{usage}% \uf4bc"
+    },
+    "memory": {
+      "interval": 2,
+      "format": "{percentage}% \udb80\uddbc"
+    },
+    "disk": {
+      "interval": 2,
+      "format": "{percentage_used}% \udb80\udeca"
+    },
+    "custom/turbo": {
+      "interval": 1,
+      "return-type": "json",
+      "exec": "~/.config/waybar/modules/turbo.sh status",
+      "on-click": "sudo ~/.config/waybar/modules/turbo.sh toggle"
+    },
+    // ---------------------
+    "group/power": {
+      "orientation": "horizontal",
+      "modules": [
+        "clock",
+        "custom/poweroff",
+        "custom/hibernate",
+        "custom/restart",
+        "custom/logout"
+      ],
+      "drawer": {
+        "transition-duration": 500,
+        "transition-left-to-right": false
+      }
+    },
+    "custom/poweroff": {
+      "format": "\udb82\udd06",
+      "tooltip-format": "Power Off",
+      "on-click": "systemctl poweroff"
+    },
+    "custom/hibernate": {
+      "format": "\udb82\udd04",
+      "tooltip-format": "Hibernate",
+      "on-click": "systemctl hibernate"
+    },
+    "custom/restart": {
+      "format": "\udb81\udf09",
+      "tooltip-format": "Restart",
+      "on-click": "systemctl reboot"
+    },
+    "custom/logout": {
+      "format": "\udb80\udf43",
+      "tooltip-format": "Logout",
+      "on-click": "hyprctl dispatch exit"
+    },
+    "clock": {
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    }
+  },
+  {
+    "output": "HDMI-A-1",
+    "layer": "top",
+    "position": "top",
+    "spacing": 8,
+    "margin": "8px 8px 0 8px", // Can't apply 8px on the bottom otherwise it would accumulate with hyprland gap (thus making it 16px) 
+    // ---------------------
+    // Modules delcaration
+    // ---------------------
+    "modules-left": [
+      "hyprland/workspaces",
+      "hyprland/window"
+    ],
+    "modules-center": [],
+    "modules-right": [
+      "custom/playerctl",
+      "pulseaudio"
+    ],
+    // ---------------------
+    // Modules configuration
+    // ---------------------
+    "hyprland/workspaces": {
+      "all-outputs": false,
+      "format": "{icon}",
+      "format-icons": {
+        "1": "\udb82\ude07",
+        "2": "\udb84\udeca",
+        "3": "\udb81\udf5a",
+        "4": "\udb81\udfb7",
+        "5": "\udb80\udd74",
+        "6": "\udb80\ude39",
+        "8": "\udb83\udec3",
+        "9": "\udb80\udd18",
+        "10": "\udb85\udd74",
+        "default": "\udb80\udf79"
+      }
+    },
+    "hyprland/window": {
+      "separate-outputs": true
+    },
+    // ---------------------
+    "custom/playerctl": {
+      "exec": "metadata=$(playerctl metadata --format '{{ artist }} - {{ title }}'); [ ${#metadata} -le 50 ] && echo \"$metadata\" || playerctl metadata --format '{{ title }}'",
+      "exec-if": "playerctl status | grep -q Playing",
+      "interval": 1
+    },
+    // ---------------------
+    "pulseaudio": {
+      "format": "{volume}% \udb80\udece",
+      "on-click": "pwvucontrol"
+    }
+  },
+  {
+    "output": "eDP-1",
+    "layer": "top",
+    "position": "top",
+    "spacing": 8,
+    "margin": "8px 8px 0 8px", // Can't apply 8px on the bottom otherwise it would accumulate with hyprland gap (thus making it 16px) 
+    // ---------------------
+    // Modules delcaration
+    // ---------------------
+    "modules-left": [
+      "hyprland/workspaces",
+      "hyprland/window"
+    ],
+    
+    // ---------------------
+    // Modules configuration
+    // ---------------------
+    "hyprland/workspaces": {
+      "all-outputs": false,
+      "format": "{icon}",
+      "format-icons": {
+        "1": "\udb82\ude07",
+        "2": "\udb84\udeca",
+        "3": "\udb81\udf5a",
+        "4": "\udb81\udfb7",
+        "5": "\udb80\udd74",
+        "6": "\udb80\ude39",
+        "8": "\udb83\udec3",
+        "9": "\udb80\udd18",
+        "10": "\udb85\udd74",
+        "default": "\udb80\udf79"
+      }
+    },
+    "hyprland/window": {
+      "separate-outputs": true
+    }
+  }
+]

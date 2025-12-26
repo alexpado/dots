@@ -8,26 +8,9 @@
 
 CONFIGURATION_DIRECTORY="$HOME/.config/waybar"
 WRAPPER_CONFIG="$CONFIGURATION_DIRECTORY/wrapper.json"
-
-ACTIVE_CONFIGURATION=""
 DEBUG=0
 
 function reload() {
-  ACTIVE_CONFIGURATION=$(hyprctl monitors -j | jq '.[] | .name' | wc -l | xargs -I % sh -c "cat $HOME/.config/waybar/wrapper.json | jq '.monitors' | jq --raw-output 'if has(\"%\") then .[\"%\"] else .[\"*\"] end'")
-  
-  # Here a small algorhythm to explain the goddamn subshell command...
-
-  # monitorData = hyprctl monitors -j
-  # monitorNames = jq '.[] | .name'
-  # monitorCount = wc -l
-  # wrapperMonitorConfig = wrapper.json | jq '.monitors'
-  #
-  # if wrapperMonitorConfig has monitorCount then
-  #   return wrapperMonitorConfig.monitorCount
-  # else
-  #   return wrapperMonitorConfig.*
-  # end
-
   if [ "$(cat $HOME/.config/waybar/wrapper.json | jq '.debug')" = "true" ]; then
     DEBUG=1 
   else 
@@ -37,9 +20,9 @@ function reload() {
 
 function run() {
   if [ "$DEBUG" -eq "1" ]; then
-    GTK_DEBUG=interactive waybar --config "$CONFIGURATION_DIRECTORY/$ACTIVE_CONFIGURATION" &
+    GTK_DEBUG=interactive waybar --config "$CONFIGURATION_DIRECTORY/config.jsonc" &
   else
-    waybar --config "$CONFIGURATION_DIRECTORY/$ACTIVE_CONFIGURATION" &
+    waybar --config "$CONFIGURATION_DIRECTORY/config.jsonc" &
   fi
 }
 

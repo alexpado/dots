@@ -1,7 +1,9 @@
 #!/bin/bash
 
 CONFIG_DIR="$HOME/.config/hypr/setup"
+WAYBAR_CONFIG_DIR="$HOME/.config/waybar/setup"
 HYPRLAND_CONFIG="$HOME/.config/hypr/hyprland.conf"
+WAYBAR_CONFIG="$HOME/.config/waybar/config.jsonc"
 
 current_config_full=$(head -n 1 "$HYPRLAND_CONFIG" | awk -F'/' '{print $NF}')
 current_config_name=${current_config_full%.conf}
@@ -17,4 +19,10 @@ if [ -n "$selected_config_name" ]; then
     sed -i "1s|.*|source = ~/.config/hypr/setup/$new_config_file|" "$HYPRLAND_CONFIG"
     sleep 1
     hyprctl reload
+
+    waybar_config_file="$selected_config_name.jsonc"
+    if [ -f "$WAYBAR_CONFIG_DIR/$waybar_config_file" ]; then
+      rm "$WAYBAR_CONFIG"
+      ln -s "$WAYBAR_CONFIG_DIR/$waybar_config_file" "$WAYBAR_CONFIG"
+    fi
 fi
